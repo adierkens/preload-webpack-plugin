@@ -42,7 +42,7 @@ const doesChunkBelongToHTML = (chunk, roots, visitedChunks) => {
     }
   }
 
-  for (const parent of chunk.parents) {
+  for (const parent of chunk.getParents()) {
     if (doesChunkBelongToHTML(parent, roots, visitedChunks)) {
       return true;
     }
